@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DISASBLE_AUTH = 'true'
-        DB_ENGINE
+        DB_ENGINE = 'sqlite'
     }
     
     stages {
