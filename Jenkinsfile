@@ -18,20 +18,18 @@ pipeline {
                 echo "Database engine is ${DB_ENGINE}"
                 echo "DISABLE_AUTH IS ${DISABLE_AUTH}"
                 sh 'printenv'
-                sh './gradlew build'
             }
         }
         stage('test') {
             steps {
-                sh './gradlew check'
+                input "Confirm to continue testing"
             }
         }
     }
     
     post {
         always {
-            archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
-            junit 'build/reports/**/*.xml'
+            echo "Post - always"
         }
     }
 }
