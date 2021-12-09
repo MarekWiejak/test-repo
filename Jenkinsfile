@@ -16,7 +16,7 @@ pipeline {
                     ls -lah
                 '''
                 echo "Database engine is ${DB_ENGINE}"
-                echo "DISABLE_AUTH IS ${DISABEL_AUTH}"
+                echo "DISABLE_AUTH IS ${DISABLE_AUTH}"
                 sh 'printenv'
             }
         }
